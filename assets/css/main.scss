@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+// Primary Colors
+$violet: #7541c8;
+$very-dark-grayish-blue: #48556a;
+$very-dark-blackish-blue: #19212e;
+$white: #ffffff;
+$light-gray: #cfcfcf;
+$light-grayish-blue: #ecf2f8;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: .8125rem;
+    font-family: 'Barlow Semi Condensed';
+    background-color: $light-grayish-blue;
+}
+
+small,
+.small {
+    font-size: 80%;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 5%;
+    min-height: 100%;
+}
+
+.card {
+    border-radius: .5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+
+    &__head {
+        display: flex;
+        align-items: center;
+
+        &__img {
+            margin-right: .75rem;
+            position: relative;
+            z-index: 1;
+
+            img {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+        }
+
+        &__name div {
+            &:last-child {
+                opacity: .7;
+            }
+        }
+    }
+
+    &__body {
+        padding: 1rem 0;
+        line-height: 1.5;
+    }
+
+    &__footer {
+        opacity: .5;
+    }
+}
+
+.card-purple {
+    background-color: $violet;
+    color: $white;
+
+    background-image: url(../img/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 90% 0;
+
+    img {
+        border: 2px solid rgba(207, 207, 207, .5);
+    }
+}
+
+.card-grayish-blue {
+    background-color: $very-dark-grayish-blue;
+    color: $white;
+
+    img {
+        border: 2px solid rgba(207, 207, 207, .5);
+    }
+}
+
+.card-white {
+    background-color: $white;
+    color: $very-dark-blackish-blue;
+
+    img {
+        border: 2px solid rgba(207, 207, 207, .5);
+    }
+}
+
+.card-dark-blackish-blue {
+    background-color: $very-dark-blackish-blue;
+    color: $white;
+
+    img {
+        border: 2px solid rgba(117, 65, 200, .5);
+    }
+}
+
+@media (min-width: 56rem) {
+    .centered {
+        padding: 2rem 10%;
+    }
+    .centered>div {
+        display: flex;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .card {
+        margin-bottom: 0;
+    }
+
+    .card-left {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .card:nth-child(1) {
+            flex: 0 0 calc(60% - .5rem);
+        }
+
+        .card:nth-child(2) {
+            flex: 0 0 calc(40% - .5rem);
+        }
+
+        .card:nth-child(3) {
+            flex: 0 0 calc(40% - .5rem);
+        }
+
+        .card:nth-child(4) {
+            flex: 0 0 calc(60% - .5rem);
+        }
+    }
+
+    .card-left {
+        flex: 0 0 75%;
+    }
+}
